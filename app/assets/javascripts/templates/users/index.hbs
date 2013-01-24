@@ -1,0 +1,16 @@
+<h1>Users</h1>
+<table class='table table-striped'>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+  </tr>
+  {{#each user in users}}
+  <tr>
+    <td>{{user.id}}</td>
+    <td>{{#linkTo 'users.show' user}}{{user.fullName}}{{/linkTo}}</td>
+  </tr>
+  {{/each}}
+</table>
+
+<div class='page-header'></div>
+{{#linkTo 'users.new' class='btn btn-primary'}}Create{{/linkTo}}

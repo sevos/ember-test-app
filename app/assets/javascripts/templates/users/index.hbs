@@ -3,11 +3,16 @@
   <tr>
     <th>ID</th>
     <th>Name</th>
+    <th>Actions</th>
   </tr>
   {{#each user in users}}
   <tr>
     <td>{{user.id}}</td>
     <td>{{#linkTo 'users.show' user}}{{user.fullName}}{{/linkTo}}</td>
+    <td>
+      {{#linkTo 'users.edit' user class='btn btn-primary'}}Edit{{/linkTo}}
+      <a href="#" {{action delete user}} class="btn btn-danger">Delete</a>
+    </td>
   </tr>
   {{/each}}
 </table>
